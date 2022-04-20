@@ -1,0 +1,32 @@
+apiVersion: skaffold/v2beta19
+kind: Config
+build:
+ tagPolicy:
+  sha256: {}
+   
+ artifacts:
+ - image: gcr.io/searce-playground-v1/mlopsapp
+   context: src
+
+ googleCloudBuild: {}
+
+#  local: 
+#    useDockerCLI: false
+
+deploy:
+  helm:
+    releases:
+     - name: mlops
+       chartPath: helm_charts
+       artifactOverrides:
+         image: gcr.io/searce-playground-v1/mlopsapp
+       imageStrategy:
+         helm: {}
+       setValues: {}
+  # kubectl:
+  #   manifests:
+  #   - test/*.yaml
+  
+ 
+
+

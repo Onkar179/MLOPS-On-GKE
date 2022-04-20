@@ -1,0 +1,7 @@
+app: webapp
+port: 1111
+replica: 2
+image:
+  repository: gcr.io/searce-playground/mlopsapp
+  tag: latest
+  pullPolicy: IfNotPresent
