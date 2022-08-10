@@ -23,9 +23,9 @@ deploy:
        imageStrategy:
          helm: {}
        setValues: {}
-  kubectl:
-    manifests:
-    - test/*.yaml
+  # kubectl:
+  #   manifests:
+  #   - test/*.yaml
   
  
 
